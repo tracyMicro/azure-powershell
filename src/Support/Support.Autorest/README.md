@@ -1,0 +1,118 @@
+<!-- region Generated -->
+# Az.Support
+This directory contains the PowerShell module for the Support service.
+
+---
+## Status
+[![Az.Support](https://img.shields.io/powershellgallery/v/Az.Support.svg?style=flat-square&label=Az.Support "Az.Support")](https://www.powershellgallery.com/packages/Az.Support/)
+
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
+
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
+
+## Module Requirements
+- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.7.5 or greater
+
+## Authentication
+AutoRest does not generate authentication code for the module. Authentication is handled via Az.Accounts by altering the HTTP payload before it is sent.
+
+## Development
+For information on how to develop for `Az.Support`, see [how-to.md](how-to.md).
+<!-- endregion -->
+
+### AutoRest Configuration
+> see https://aka.ms/autorest
+
+```yaml
+# pin the swagger version by using the commit id instead of branch name
+commit: 99b27b136352e2f16c3f868857fa33157ace895f
+require:
+# readme.azure.noprofile.md is the common configuration file
+  - $(this-folder)/../../readme.azure.noprofile.md
+input-file:
+  - $(repo)/specification/support/resource-manager/Microsoft.Support/preview/2022-09-01-preview/support.json
+
+title: Support
+module-version: 0.1.0
+subject-prefix: $(service-name)
+
+directive:
+  # Remove the default value of subscriptionId
+  - from: source-file-csharp
+    where: $
+    transform: $ = $.replace('        [Microsoft.Azure.PowerShell.Cmdlets.Support.Runtime.DefaultInfo(\n        Name = @"",\n        Description =@"",\n        Script = @"(Get-AzContext).Subscription.Id",\n        SetCondition = @"")]\n', '')
+  # Rename the operation ids of NoSubscription to make them can be combined automatically
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/checkNameAvailability"].post'
+    transform: >
+      $["operationId"] = "SupportTickets_CheckNameAvailabilityWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets"].get'
+    transform: >
+      $["operationId"] = "SupportTickets_ListWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}"].get'
+    transform: >
+      $["operationId"] = "SupportTickets_GetWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}"].patch'
+    transform: >
+      $["operationId"] = "SupportTickets_UpdateWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}"].put'
+    transform: >
+      $["operationId"] = "SupportTickets_CreateWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}/checkNameAvailability"].post'
+    transform: >
+      $["operationId"] = "Communications_CheckNameAvailabilityWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}/communications"].get'
+    transform: >
+      $["operationId"] = "SupportTicketCommunications_ListWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}/communications/{communicationName}"].get'
+    transform: >
+      $["operationId"] = "Communications_GetWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}/communications/{communicationName}"].put'
+    transform: >
+      $["operationId"] = "Communications_CreateWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}/chatTranscripts"].get'
+    transform: >
+      $["operationId"] = "SupportTicketChatTranscripts_ListWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/supportTickets/{supportTicketName}/chatTranscripts/{chatTranscriptName}"].get'
+    transform: >
+      $["operationId"] = "ChatTranscripts_GetWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/fileWorkspaces/{fileWorkspaceName}"].get'
+    transform: >
+      $["operationId"] = "FileWorkspaces_GetWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/fileWorkspaces/{fileWorkspaceName}"].put'
+    transform: >
+      $["operationId"] = "FileWorkspaces_CreateWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/fileWorkspaces/{fileWorkspaceName}/files"].get'
+    transform: >
+      $["operationId"] = "Files_ListWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/fileWorkspaces/{fileWorkspaceName}/files/{fileName}"].get'
+    transform: >
+      $["operationId"] = "Files_GetWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/fileWorkspaces/{fileWorkspaceName}/files/{fileName}"].put'
+    transform: >
+      $["operationId"] = "Files_CreateWithNoSubscriptionId";
+  - from: swagger-document
+    where: '$.paths["/providers/Microsoft.Support/fileWorkspaces/{fileWorkspaceName}/files/{fileName}/upload"].post'
+    transform: >
+      $["operationId"] = "Files_UploadWithNoSubscriptionId";
