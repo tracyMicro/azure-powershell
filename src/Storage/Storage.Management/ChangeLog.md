@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 6.1.1
 * Updated the prompt message when deleting a share snapshot and the output format when listing 
     - `Remove-AzStorageShare`
     - `Remove-AzRmStorageSahre`

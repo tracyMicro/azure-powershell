@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 6.7.1
 * Added breaking change notification for cmdlets whose output type is `ASRVaultSettings`.
 
 ## Version 6.7.0

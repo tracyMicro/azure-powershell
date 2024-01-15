@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 2.15.1
 * Fixed the multiple `x-ms-unique-id` values issue
 
 ## Version 2.15.0

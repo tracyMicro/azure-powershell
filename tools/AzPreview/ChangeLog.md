@@ -1,3 +1,47 @@
+## 11.3.0 - December 2023
+#### Az.Accounts 2.15.1
+* Fixed the multiple 'x-ms-unique-id' values issue
+
+#### Az.DataFactory 1.18.1
+* Added metadata Into StoreWriteSettings For Bug Fix
+* Supported ADF Warehouse, Mysql V2 and Salesforce V2 in ADF
+
+#### Az.DeploymentManager 1.1.1
+* All operations for resources have been flagged as deprecated. Deployment manager module will be retired soon.
+
+#### Az.ElasticSan 1.0.0
+* General availability for module Az.ElasticSan
+
+#### Az.NetAppFiles 0.14.1
+* Fixed some minor issues
+
+#### Az.Nginx 1.0.0
+* General availability of 'Az.Nginx' module
+
+#### Az.RecoveryServices 6.7.1
+* Added breaking change notification for cmdlets whose output type is 'ASRVaultSettings'.
+
+#### Az.Resources 6.14.0
+* Fixed ABAC condition not included in role definition payload. Get-AzRoleDefinition will now contain ABAC Condition and ConditionVersion info when applicable.
+
+#### Az.SpringCloud 0.3.1
+* Added rename notification for Az.SpringCloud module.
+
+#### Az.Sql 4.14.0
+* Added 'DatabaseFormat' and 'PricingModel' parameters to 'New-AzSqlInstance', 'Set-AzSqlInstance'
+
+#### Az.SqlVirtualMachine 2.2.0
+* Fixed a bug of parameter 'VirtualMachineResourceId' of cmdlet 'New-AzSqlVM'.
+
+#### Az.Storage 6.1.1
+* Updated the prompt message when deleting a share snapshot and the output format when listing 
+    - 'Remove-AzStorageShare'
+    - 'Remove-AzRmStorageSahre'
+    - 'Get-AzRmStorageShare'
+
+#### Az.Websites 3.2.0
+* Fixed Ambiguous Positional Argument for 'New-AzWebAppSlot'
+
 ## 11.3.0 - January 2024
 #### Az.KeyVault 2.15.0
 * dkfjdkfj
