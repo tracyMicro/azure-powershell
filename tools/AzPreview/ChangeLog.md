@@ -1,3 +1,29 @@
+## 11.3.0 - January 2024
+#### Az.KeyVault 2.15.0
+* dkfjdkfj
+
+#### Az.Accounts 2.15.0
+* Fixed the authentication issue when using 'FederatedToken' in Sovereign Clouds. [#23742]
+* Added upcoming breaking change warning for deprecation of config parameter 'DisableErrorRecordsPersistence'.
+
+#### Az.Alb 0.1.1
+* Upgraded API version to 2023-11-01
+
+#### Az.CosmosDB 1.14.0
+* Introduced Restore-AzCosmosDBSqlDatabase, Restore-AzCosmosDBSqlContainer to restore deleted database and containers in the same account for SQL.
+* Introduced Restore-AzCosmosDBMongoDBDatabase, Restore-AzCosmosDBMongoDBCollection to restore deleted database and collections in the same account for MongoDB.
+* Introduced Restore-AzCosmosDBGremlinDatabase, Restore-AzCosmosDBGremlinGraph to restore deleted database and graph in the same account for Gremlin.
+* Introduced Restore-AzCosmosDBTable to restore deleted table in the same account.
+
+#### Az.CustomLocation 0.1.1
+* Upgraded api version to 2021-08-31-preview.
+
+#### Az.DataProtection 2.2.0
+* Added support for Cross region restore for Backup vaults
+
+#### Az.DesktopVirtualization 4.3.0
+* Removed AppAttach Cmdlets and ResetIcon parameter to Update-AzWvdApplication
+
 ## 11.2.0 - January 2024
 #### Az.Accounts 2.15.0
 * Fixed the authentication issue when using 'FederatedToken' in Sovereign Clouds. [#23742]
