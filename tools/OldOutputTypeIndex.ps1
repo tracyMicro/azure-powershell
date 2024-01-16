@@ -17,6 +17,7 @@ foreach ($item in $jsonData) {
 }
 $ModuleMetadata.RequiredModules | ForEach {
         $ModuleName = $_.ModuleName
+        $ModuleName
         $RequiredVersion = $_.RequiredVersion
         $Module = Get-Module $ModuleName
         $srcFile = $ModuleManifestFile | Where-Object {$_.Name -eq "$ModuleName.psd1"}
