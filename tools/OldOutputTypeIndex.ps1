@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory = $false)]
     [string] $OutputFile = "outputtypes.json"
 )
-Import-Modlue Az.Accounts -Repository PSGallery -Force -Scope CurrentUser
+Install-Module Az.Accounts -Repository PSGallery -Force -Scope CurrentUser
 $AzPreviewPath = Get-Item $PSScriptRoot\AzPreview\AzPreview.psd1
 Import-LocalizedData -BindingVariable ModuleMetadata -BaseDirectory $AzPreviewPath.DirectoryName -FileName $AzPreviewPath.Name
 $ModulePath = ($env:PSModulePath -split ';')[0]
