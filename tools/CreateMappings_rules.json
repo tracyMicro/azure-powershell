@@ -863,5 +863,9 @@
   {
     "module": "Fleet",
     "alias": "Fleet"
+  },
+  {
+    "module": "ManagedNetworkFabric",
+    "alias": "Managed Network Fabric"
   }
 ]
