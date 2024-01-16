@@ -17,9 +17,7 @@ foreach ($item in $jsonData) {
 }
 $ModuleMetadata.RequiredModules | ForEach {
         $ModuleName = $_.ModuleName
-        $ModuleName
         $RequiredVersion = $_.RequiredVersion
-        $Module = Get-Module $ModuleName
         $srcFile = $ModuleManifestFile | Where-Object {$_.Name -eq "$ModuleName.psd1"}
         Import-LocalizedData -BindingVariable srcMetadata -BaseDirectory $srcFile.DirectoryName -FileName $srcFile.Name
         $containsPsd1 = $srcMetadata.NestedModules | Where-Object { $_ -like "*.dll" }
@@ -27,6 +25,7 @@ $ModuleMetadata.RequiredModules | ForEach {
         $psd1Path = Join-Path -Path $DestinationModulePath -ChildPath "$ModuleName.psd1"
         if (($containsPsd1.count -gt 0) -and (Test-Path $psd1Path)){
             Import-Module $Psd1Path -Force
+            $Module = Get-Module $ModuleName
             foreach ($ModuleInfo in $Module.NestedModules){
                 if ($srcMetadata.NestedModules -contains $ModuleInfo.Name+".dll") {
                     foreach ($Cmdlet in $ModuleInfo.ExportedCmdlets.Values) {
@@ -36,7 +35,6 @@ $ModuleMetadata.RequiredModules | ForEach {
                             foreach ($OutputType in $OutputAttribute.Type)
                             {
                                 $outputTypes.Add($OutputType.Name) | Out-Null
-                                $OutputType.Name
                             }
                         }
                         foreach ($Parameter in $Cmdlet.Parameters.Values){
